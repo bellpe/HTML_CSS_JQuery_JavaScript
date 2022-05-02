@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" id="data" onkeyup="show()">
+
+        <!-- checkbox, radio 타입은 반드시 value속성값을 정의해야 한다! -->
+        제육볶음<input type="checkbox" name="food" value="제육볶음">
+        연어초밥<input type="checkbox" name="food" value="연어초밥">
+        뚝불<input type="checkbox" name="food" value="뚝불" >
+        
+        <input type="button" value="확인" onclick="show()">
+    </form>
+    <p id="dataView"></p>
+
+    <script src="./js/ex11.value.js"></script>
+</body>
+</html>

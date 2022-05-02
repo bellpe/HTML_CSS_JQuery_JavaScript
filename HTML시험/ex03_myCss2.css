@@ -1,0 +1,7 @@
+#container{ width: 500px; height: 500px;}
+#Header{width: 100%; height: 10%; background-color: #EA4335;}
+#Nav{width: 100%; height: 10%; background-color: #EF6C00;}
+#Side{width: 30%; height: 60%; background-color: #4285F4; float: left;}
+#section1{width: 70%; height: 30%; background-color: #34A853; float: right;}
+#section2{width: 70%; height: 30%; background-color: #FBBC05; float: right;}
+#Footer{width: 100%; height: 20%; background-color: #8A8D92; clear: both;}

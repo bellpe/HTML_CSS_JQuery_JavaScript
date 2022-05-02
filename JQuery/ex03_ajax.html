@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #movieList{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            width: 1300px;
+            height: 500px;
+        }
+        .movie-info{
+            position: relative;
+            width: 220px;
+            height: 400px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            box-shadow: 5px 5px 5px black;
+            overflow: hidden;
+        }
+        .movie-info > img{
+            width: 300px;
+            position: absolute;
+            top: 35%;
+            left: 50%;
+            margin: -150px 0 0 -150px;
+        }
+        /* 이미지에 마우스를 올렸을 때 div.info요소의 display를 flex로 지정 */
+        .movie-info > img:hover + div.info{
+            display: flex;
+        }
+        .movie-info > .info{
+            display: none;
+            position: absolute;
+            width: 220px;
+            height: 400px;
+            background-color: rgba(48, 47, 47, 0.5);
+            flex-direction: column;
+            justify-content: space-around;
+            text-align: center;
+        }
+        .info > span{
+            color: white;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 부모요소 -->
+    <div id="movieList">
+        <!-- 자식요소
+        <div class="movie-info">
+            <img src="https://movie-phinf.pstatic.net/20220214_120/1644825641315cvVKI_JPEG/movie_image.jpg" alt="">
+            <div class="info">
+                <span>순위: 1</span>
+                <span>영화명: 더 배트맨</span>
+                <span>개봉일: 2022-03-01</span>
+            </div>
+        </div>
+
+        <div class="movie-info">
+            <img src="https://movie-phinf.pstatic.net/20220214_120/1644825641315cvVKI_JPEG/movie_image.jpg" alt="">
+            <div class="info">
+                <span>순위: 1</span>
+                <span>영화명: 더 배트맨</span>
+                <span>개봉일: 2022-03-01</span>
+            </div>
+        </div>
+
+        <div class="movie-info">
+            <img src="https://movie-phinf.pstatic.net/20220214_120/1644825641315cvVKI_JPEG/movie_image.jpg" alt="">
+            <div class="info">
+                <span>순위: 1</span>
+                <span>영화명: 더 배트맨</span>
+                <span>개봉일: 2022-03-01</span>
+            </div>
+        </div>
+
+        <div class="movie-info">
+            <img src="https://movie-phinf.pstatic.net/20220214_120/1644825641315cvVKI_JPEG/movie_image.jpg" alt="">
+            <div class="info">
+                <span>순위: 1</span>
+                <span>영화명: 더 배트맨</span>
+                <span>개봉일: 2022-03-01</span>
+            </div>
+        </div>
+
+        <div class="movie-info">
+            <img src="https://movie-phinf.pstatic.net/20220214_120/1644825641315cvVKI_JPEG/movie_image.jpg" alt="">
+            <div class="info">
+                <span>순위: 1</span>
+                <span>영화명: 더 배트맨</span>
+                <span>개봉일: 2022-03-01</span>
+            </div>
+        </div>
+
+        <div class="movie-info">
+            <img src="https://movie-phinf.pstatic.net/20220214_120/1644825641315cvVKI_JPEG/movie_image.jpg" alt="">
+            <div class="info">
+                <span>순위: 1</span>
+                <span>영화명: 더 배트맨</span>
+                <span>개봉일: 2022-03-01</span>
+            </div>
+        </div>
+
+        <div class="movie-info">
+            <img src="https://movie-phinf.pstatic.net/20220214_120/1644825641315cvVKI_JPEG/movie_image.jpg" alt="">
+            <div class="info">
+                <span>순위: 1</span>
+                <span>영화명: 더 배트맨</span>
+                <span>개봉일: 2022-03-01</span>
+            </div>
+        </div>
+
+        <div class="movie-info">
+            <img src="https://movie-phinf.pstatic.net/20220214_120/1644825641315cvVKI_JPEG/movie_image.jpg" alt="">
+            <div class="info">
+                <span>순위: 1</span>
+                <span>영화명: 더 배트맨</span>
+                <span>개봉일: 2022-03-01</span>
+            </div>
+        </div>
+
+        <div class="movie-info">
+            <img src="https://movie-phinf.pstatic.net/20220214_120/1644825641315cvVKI_JPEG/movie_image.jpg" alt="">
+            <div class="info">
+                <span>순위: 1</span>
+                <span>영화명: 더 배트맨</span>
+                <span>개봉일: 2022-03-01</span>
+            </div>
+        </div>
+
+        <div class="movie-info">
+            <img src="https://movie-phinf.pstatic.net/20220214_120/1644825641315cvVKI_JPEG/movie_image.jpg" alt="">
+            <div class="info">
+                <span>순위: 1</span>
+                <span>영화명: 더 배트맨</span>
+                <span>개봉일: 2022-03-01</span>
+            </div>
+        </div> -->
+    </div>
+    
+    <button>영화정보보기</button>
+
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        $(function(){
+
+            // 버튼 클릭 시, 영화정보를 요청하여 데이터를 로드(Ajax활용)
+            $('button').on('click', ()=>{
+
+                //ajax 구조
+                // url : 요청할 서버경로
+                // success : 요청/응답 성공시 동작하는 콜백함수
+                $.ajax({
+                    url:'https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt=20220303',
+                    success:(movieInfo)=>{
+
+                        //JSON포맷 : JavaScript 객체와 같은 구조
+                        // 구조 : {키:값, ...}
+                        console.log('요청성공!', movieInfo);
+
+                        console.log(movieInfo.boxOfficeResult);
+
+                        console.log(movieInfo.boxOfficeResult.dailyBoxOfficeList);
+
+                        let posterUrl = [
+                            'https://movie-phinf.pstatic.net/20220214_120/1644825641315cvVKI_JPEG/movie_image.jpg',
+                            'https://movie-phinf.pstatic.net/20220217_242/1645084631470w6PTw_JPEG/movie_image.jpg',
+                            'https://movie-phinf.pstatic.net/20220209_134/1644383194692LvFfD_JPEG/movie_image.jpg',
+                            'https://movie-phinf.pstatic.net/20220223_93/1645596742589KTCfc_JPEG/movie_image.jpg',
+                            'https://movie-phinf.pstatic.net/20220120_114/1642670007393r2KR2_JPEG/movie_image.jpg',
+                            'https://img.cgv.co.kr/Movie/Thumbnail/Poster/000085/85680/85680_320.jpg',
+                            'https://movie-phinf.pstatic.net/20220216_25/1644979622768ayXMn_JPEG/movie_image.jpg',
+                            'https://movie-phinf.pstatic.net/20220210_27/16444726389021AWu6_JPEG/movie_image.jpg',
+                            'https://movie-phinf.pstatic.net/20220210_83/1644461379258dc39x_JPEG/movie_image.jpg',
+                            'https://movie-phinf.pstatic.net/20220211_183/1644564579835qSM9K_JPEG/movie_image.jpg',
+                        ];
+                        let movieList = movieInfo.boxOfficeResult.dailyBoxOfficeList;
+
+                        // '<div id ="movieList"></div>' jQuery객체를 변수에 저장
+                        let $movieList = $('#movieList');
+
+                        // 배열객체.forEach((배열요소, 인덱스) =>{});
+                        movieList.forEach((movie, index) => {
+                            // console.log(index, item);
+                            // console.log(movie.rank, movie.movieNm, movie.openDt);
+
+                            // div#movieList 요소에 영화정보(요소)를 추가(append())
+                            $movieList.append(`
+                                <div class="movie-info">
+                                    <img src="${posterUrl[index]}" alt="">
+                                    <div class="info">
+                                        <span>순위: ${movie.rank}</span>
+                                        <span>영화명: ${movie.movieNm}</span>
+                                        <span>개봉일: ${movie.openDt}</span>
+                                    </div>
+                                </div>
+                            `);
+
+                        });
+                        
+                        // for(let i=0; i<movieList.length; i++){
+                        //     console.log(movieList[i].rank, 
+                        //                 movieList[i].movieNm, 
+                        //                 movieList[i].openDt);
+                        // }
+                    }
+                });
+
+            });
+        
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- 자바스크립트 -->
+    <script>
+        // 연산자 : 증감, 대입, 산술, 논리, 비교, 삼항
+        // 산술연산자 : + - * /(나누기) %
+
+        // 데이터 형변환 : parseInt(), parseFloat(), Number(), String()
+        console.log(9/2); // 4.5라는 실수값이 출력
+        console.log(parseInt(9/2)); // 4.5 -> 4로 변환
+
+        // 비교연산자 : ==(동등연산자), !=, >, <, >=, <=, ===(일치연산자), !==
+        // * 숫자 데이터와 문자열 데이터를 비교할 때 비교연산자를 사용하면 자동형변환이 발생!
+        //   사전에 비교할 데이터들의 값과 자료형을 맞춘 상태에서 비교연산자를 사용!
+        //   두 데이터가 같은지를 비교할 때에는 반드시 일치연산자를 사용!
+        console.log(5 == 5);
+        console.log(5 == '5'); // '5'를 숫자형으로 자동형변환
+        console.log(5 === '5'); // 자동형변환X
+    </script>
+</body>
+</html>

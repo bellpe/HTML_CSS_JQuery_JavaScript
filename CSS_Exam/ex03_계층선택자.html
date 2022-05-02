@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 계층선택자 : HTML 구조를 이용해서 요소에 접근하는 선택자 */
+        /* 자손선택자 */
+        dl span {color: red;}
+        /* 자식선택자 */
+        ol > span {color: blue;}
+        /* 근접후행 선택자 */
+        li + li {color: green;}
+        /* 후행 선택자 */
+        li ~ li {color: gray;}
+    </style>
+</head>
+<body>
+    
+    <dl>
+        <dt>연수생 수칙</dt>
+        <dd>
+            <ol>
+                <li>지각하지 않기</li>
+                <li>결석하지 않기</li>
+                <span>(불가피할 땐 꼭 담당연구원에게 미리 말하기)</span>
+                <li>복습하기</li>
+            </ol>
+        </dd>
+    </dl>
+
+</body>
+</html>

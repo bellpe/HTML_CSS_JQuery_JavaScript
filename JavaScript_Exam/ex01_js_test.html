@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="#"><h1>인공지능반</h1></a>
+    <input type="button" value="디자인바꿔보자" onclick="change()">
+    <input type="button" value="다시 초기화!">
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+    <h1>오늘은 2월 24일</h1>
+    <p>자바스크립 첫 스타트!</p>
+
+    <!-- 자바스크립트 -->
+    <script>
+        function change(){
+            // change() 함수 실행시 웹 페이지 배경색을 검정색, 글자색은 하얀색으로 변경
+            // 대상 : body 요소
+            // 지정할 스타일 : 배경색, 글자색
+            // document.querySelector("body") -> body요소객체
+            document.querySelector("body").style.backgroundColor = "black";
+            document.querySelector("body").style.color = "white";
+
+        }
+
+        // 두 개의 버튼을 배열로 btns변수에 저장
+        let btns = document.querySelectorAll("input[type = 'button']");
+
+        // 두번째 버튼에 클릭 이벤트 등록
+        btns[1].addEventListener('click', init);
+
+        function init(){
+            document.querySelector("body").style.backgroundColor = "white";
+            document.querySelector("body").style.color = "black";
+
+        }
+    </script>
+    
+</body>
+</html>
